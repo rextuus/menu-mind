@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %} {# Assuming your base file is named base.html.twig #}
+
+{% block title %}What's for Lunch?{% endblock %}
+
+{% block body %}
+
+    {# Main container matching the look of the mockup card, using the custom class #}
+    <div class="rounded-container text-center">
+
+
+        {# Header/About is handled by the base template, so we start with the question #}
+
+        {# Main Question #}
+        <h1 class="fw-bold" style="font-size: 2.25rem;">What should I eat for lunch?</h1>
+
+        {{ component('FoodPicker') }}
+
+{#        #}{# Get Suggestion Button #}
+{#        <form method="POST" action="#" class="mt-0">#}
+{#            <button type="submit" class="btn btn-info my-2 shadow-sm">#}
+{#                Get suggestion#}
+{#            </button>#}
+{#        </form>#}
+
+{#        #}{# Food Image  #}
+{#        <div class="my-4">#}
+{#            #}{##}
+{#            Use a placeholder image path. You must place your image#}
+{#            in the public/ folder and adjust the path accordingly.#}
+{#            #}
+{#            <img src="https://image.essen-und-trinken.de/11920774/t/n1/v9/w960/r1.5/-/432837--48883-.jpg"#}
+{#                 alt="A bowl of sautéed broccoli and mushrooms"#}
+{#                 class="img-fluid rounded-4"#}
+{#                 style="max-height: 500px; width: 90%; height: auto; object-fit: cover;">#}
+{#        </div>#}
+
+        {# Lightbulb Icon (Placeholder for the lightbulb image) #}
+        <div class="mt-2 mb-2">
+            <img src="https://res.cloudinary.com/dl4y4cfvs/image/upload/v1764284114/menu-mind/Gemini_Generated_Image_64853g64853g6485_lfrga1.png"
+                 alt="Lightbulb icon"
+                 style="width: 200px; height: auto;">
+        </div>
+
+        {# Call to Action Title #}
+        <h2 class="fs-4 fw-bold mb-3">Let MenuMind help you decide!</h2>
+
+        {# Description Text #}
+        <p class="text-muted small px-3">
+            Sarah's MenuMind offers a simple way to get a random suggestion for what to eat for lunch.
+            End the indecision and let MenuMind provide you with a quick, delicious idea.
+        </p>
+
+    </div>
+
+{% endblock %}

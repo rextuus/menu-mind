@@ -1,0 +1,48 @@
+@import "bootstrap/scss/bootstrap";
+
+body {
+    background-color: #ffffff;
+}
+
+.food-image-wrapper {
+  aspect-ratio: 4 / 3; /* or 1/1 if you want square */
+  width: 90%;
+  max-height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.food-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1.5s ease; // smoother fade
+
+}
+
+.food-image-wrapper img.instant {
+  transition: none !important;
+}
+
+.loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.loader::after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(0,0,0,0.1);
+  border-top-color: #17a2b8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

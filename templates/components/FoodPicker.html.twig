@@ -1,0 +1,27 @@
+<div {{ attributes }}>
+    <div class="text-center"
+         data-controller="food"
+         data-food-images-value='{{ images|json_encode }}'
+         data-food-loading-images-value='{{ loadingImages|json_encode }}'
+         data-food-final-gifs-value='{{ finalGifs|json_encode }}'
+         data-food-locked-value='{{ locked ? "true" : "false" }}'
+    >
+
+        <button
+                data-action="click->food#stop click->live#action"
+                data-live-action-param="pick"
+                class="btn btn-info my-2 shadow-sm">
+            Get suggestion
+        </button>
+
+        <div class="food-image-wrapper position-relative">
+
+            <div class="loader d-none" data-food-target="loader"></div>
+
+            <img data-food-target="img"
+                 src="{{ currentImage }}"
+                 class="img-fluid w-100 h-100">
+        </div>
+
+    </div>
+</div>

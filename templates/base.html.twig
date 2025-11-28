@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sarah's MenuMind{% endblock %}</title>
+
+    {# Stylesheets can go here #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+
+<body>
+{% include 'partials/header.html.twig' %}
+
+<main class="page-content">
+    {% block body %}{% endblock %}
+</main>
+
+{% include 'partials/footer.html.twig' %}
+
+{# Scripts can go here #}
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
+</html>
