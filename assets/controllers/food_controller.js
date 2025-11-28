@@ -5,10 +5,11 @@ export default class extends Controller {
         images: Array,
         loadingImages: Array,
         finalGifs: Array,
+        positiveAttributes: Array,
         locked: Boolean
     }
 
-    static targets = ["img", "loader"]
+    static targets = ["img", "loader", "finalText"]
 
     connect() {
         if (!this.lockedValue) {
@@ -77,13 +78,25 @@ export default class extends Controller {
             Math.floor(Math.random() * this.finalGifsValue.length)
             ];
 
+        const attribute = this.positiveAttributesValue[
+            Math.floor(Math.random() * this.positiveAttributesValue.length)
+            ];
+
         setTimeout(() => {
             this.imgTarget.src = finalGif;
             this.imgTarget.style.opacity = "1";
+
+            // ⭐ Show final text
+            this.finalTextTarget.textContent =
+                `Yeah, you're right — Sarah is ${attribute}! 🤌 But food suggestion?! Really? 😂`;
+            this.finalTextTarget.classList.remove("d-none");
+            this.finalTextTarget.classList.add("show");
+
         }, 200);
 
         this.loaderTarget.classList.add("d-none");
     }
+
 
     stopShuffle() {
         if (this.interval) clearInterval(this.interval);

@@ -46,3 +46,33 @@ body {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* Result message BELOW image */
+.result-message {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .6s ease;
+  background: rgba(255,255,255,0.92);
+  padding: 12px 16px;
+  border-radius: 14px;
+  max-width: 90%;
+  margin: 10px auto 0;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+/* when text becomes visible */
+.result-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* mobile adjustments */
+@media (max-width: 600px) {
+  .result-message {
+    font-size: .9rem;
+    padding: 10px 12px;
+    max-width: 95%;
+  }
+}

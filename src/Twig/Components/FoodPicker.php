@@ -66,6 +66,39 @@ final class FoodPicker
         'https://media1.tenor.com/m/r86b0Rh3f1UAAAAd/mukbang-food.gif',
     ];
 
+    #[LiveProp(writable: true)]
+    public array $positiveAttributes = [
+        'smart',
+        'pretty',
+        'absolutely amazing',
+        'insanely intelligent',
+        'funny as hell',
+        'a genius',
+        'beautiful',
+        'unstoppable',
+        'an angel',
+        'a legend',
+        'sharp as a razor',
+        'cooler than the other side of the pillow',
+        'ridiculously talented',
+        'a walking brain upgrade',
+        'the main character',
+        'on fire today',
+        'built different',
+        'the human version of a 5-star review',
+        'someone AI shouldn’t underestimate',
+        'a certified masterpiece',
+        'dangerously clever',
+        'cosmically brilliant',
+        'the universe’s favorite plot twist',
+        'running on pure excellence',
+        'effortlessly iconic',
+        'the gold standard',
+        'proof that evolution works',
+        '99% vibes, 1% chaos (in a good way)',
+        'secretly a superhero'
+    ];
+
     #[LiveProp]
     public string $currentImage = 'https://image.essen-und-trinken.de/11920774/t/n1/v9/w960/r1.5/-/432837--48883-.jpg';
 

@@ -4,6 +4,7 @@
          data-food-images-value='{{ images|json_encode }}'
          data-food-loading-images-value='{{ loadingImages|json_encode }}'
          data-food-final-gifs-value='{{ finalGifs|json_encode }}'
+         data-food-positive-attributes-value='{{ positiveAttributes|json_encode }}'
          data-food-locked-value='{{ locked ? "true" : "false" }}'
     >
 
@@ -14,13 +15,25 @@
             Get suggestion
         </button>
 
+        <!-- GIF / Images -->
         <div class="food-image-wrapper position-relative">
 
             <div class="loader d-none" data-food-target="loader"></div>
 
             <img data-food-target="img"
                  src="{{ currentImage }}"
-                 class="img-fluid w-100 h-100">
+                 class="img-fluid rounded-4 w-100 h-100">
+
+        </div>
+
+        <!-- Overlay message BELOW GIF -->
+        <div class="result-message d-none" data-food-target="finalText"></div>
+
+        <!-- Lightbulb ALWAYS visible -->
+        <div class="lightbulb mt-3">
+            <img src="https://res.cloudinary.com/dl4y4cfvs/image/upload/v1764284114/menu-mind/Gemini_Generated_Image_64853g64853g6485_lfrga1.png"
+                 alt="Lightbulb"
+                 style="width:180px; height:auto;">
         </div>
 
     </div>
